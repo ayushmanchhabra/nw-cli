@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            const nwWindow = nw.Window.get();
+            document.getElementById("nw-window-height").innerHTML = nwWindow.height;
+            document.getElementById("nw-window-width").innerHTML = nwWindow.width;
+            document.getElementById("nw-window-id").innerHTML = nwWindow.id;
+            document.getElementById("nw-window-title").innerHTML = nwWindow.title;
+            document.getElementById("nw-window-x").innerHTML = nwWindow.x;
+            document.getElementById("nw-window-y").innerHTML = nwWindow.y;
+            nwWindow.on("devtools-closed", function () {
+                document.getElementById("nw-window-on-devtools-closed").innerHTML =
+                    "devtools-closed";
+            });
+
+            await nwWindow.showDevTools();
+            await nwWindow.closeDevTools();
+        });
+    </script>
+</head>
+
+<body>
+    </head>
+
+    <body>
+        <span id="nw-window-height"></span>
+        <span id="nw-window-width"></span>
+        <span id="nw-window-id"></span>
+        <span id="nw-window-title"></span>
+        <span id="nw-window-x"></span>
+        <span id="nw-window-y"></span>
+        <span id="nw-window-on-devtools-closed"></span>
+    </body>
+
+</html>
