@@ -26,9 +26,9 @@ function isDevToolsOpen(callback) {
  * The environment is checked before adding the relevant functions.
 */
 export default function polyfill () {
-    if (process.versions['nw-flavor'] === 'sdk' && typeof nw.Window.isDevToolsOpen !== 'function') {
-        nw.Window.isDevToolsOpen = isDevToolsOpen;
-        global.nw.Window.isDevToolsOpen = isDevToolsOpen;
-        window.nw.Window.isDevToolsOpen = isDevToolsOpen;
+    if (process.versions['nw-flavor'] === 'sdk' && typeof nw.Window.isDevToolsOpen !== 'function') {        
+        nw.Window.__proto__.isDevToolsOpen = isDevToolsOpen;
+        global.nw.Window.__proto__.isDevToolsOpen = isDevToolsOpen;
+        window.nw.Window.__proto__.isDevToolsOpen = isDevToolsOpen;
     }
 }
