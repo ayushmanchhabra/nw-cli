@@ -29,7 +29,7 @@
         "postinstall": "base-volta-off-of-nwjs",
         "lint": "exit 0",
         "test": "vitest run",
-        "dev": "nw ./tests/fixtures/nw/window"
+        "dev": "nw ./tests/fixtures/custom"
     },
     "devDependencies": {
         "@types/chrome": "^0.0.270",

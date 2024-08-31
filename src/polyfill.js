@@ -27,8 +27,8 @@ function isDevToolsOpen(callback) {
 */
 export default function polyfill () {
     if (process.versions['nw-flavor'] === 'sdk' && typeof nw.Window.isDevToolsOpen !== 'function') {        
-        nw.Window.__proto__.isDevToolsOpen = isDevToolsOpen;
-        global.nw.Window.__proto__.isDevToolsOpen = isDevToolsOpen;
-        window.nw.Window.__proto__.isDevToolsOpen = isDevToolsOpen;
+        nw.Window.prototype.isDevToolsOpen = isDevToolsOpen;
+        global.nw.Window.prototype.isDevToolsOpen = isDevToolsOpen;
+        window.nw.Window.prototype.isDevToolsOpen = isDevToolsOpen;
     }
 }
