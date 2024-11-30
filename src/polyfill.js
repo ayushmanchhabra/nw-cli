@@ -15,9 +15,9 @@ function isDevToolsOpen(callback) {
         populate: true,
         windowTypes: ['devtools']
     },
-    function (wins) {
-        callback(wins.length > 0);
-    })
+        function (wins) {
+            callback(wins.length > 0);
+        })
 }
 
 /**
@@ -25,10 +25,10 @@ function isDevToolsOpen(callback) {
  * 
  * The environment is checked before adding the relevant functions.
 */
-export default function polyfill () {
+export default function polyfill() {
     if (process.versions['nw-flavor'] === 'sdk' && typeof nw.Window.isDevToolsOpen !== 'function') {
-        nw.Window.isDevToolsOpen = isDevToolsOpen;
-        global.nw.Window.isDevToolsOpen = isDevToolsOpen;
-        window.nw.Window.isDevToolsOpen = isDevToolsOpen;
+        nw.Window.prototype.isDevToolsOpen = isDevToolsOpen;
+        global.nw.Window.prototype.isDevToolsOpen = isDevToolsOpen;
+        window.nw.Window.prototype.isDevToolsOpen = isDevToolsOpen;
     }
 }
