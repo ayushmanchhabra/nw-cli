@@ -32,18 +32,18 @@
         "dev": "nw ./tests/fixtures/custom"
     },
     "devDependencies": {
-        "@types/chrome": "^0.0.284",
-        "@types/node": "^22.9.3",
+        "@types/chrome": "^0.0.293",
+        "@types/node": "^22.10.5",
         "@types/nw.js": "^0.92.0",
-        "@types/selenium-webdriver": "^4.1.27",
-        "selenium-webdriver": "^4.26.0",
-        "vitest": "^2.1.5"
+        "@types/selenium-webdriver": "^4.1.28",
+        "selenium-webdriver": "^4.27.0",
+        "vitest": "^2.1.8"
     },
     "dependencies": {
         "base-volta-off-of-nwjs": "^1.0.5",
-        "commander": "^12.1.0",
-        "nw": "^0.93.0",
-        "nw-builder": "^4.13.1"
+        "commander": "^13.0.0",
+        "nw": "^0.94.1",
+        "nw-builder": "^4.13.8"
     },
     "volta": {
         "node": "22.2.0"
